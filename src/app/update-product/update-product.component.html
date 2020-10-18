@@ -1,0 +1,47 @@
+<div>
+    <h2>Update Product</h2>
+    <form>
+        <label for="productName">Product Name:</label>
+        <input type="text" name="productName" [(ngModel)]="productName">
+        <br>
+        <br>
+        <label for="productPrice">Product Price:</label>
+        <input type="text" name="productPrice" [(ngModel)]="productPrice">
+        <br>
+        <br>
+        <label for="productSize">Product Size:</label>
+        <p>
+            <strong>Sizes:</strong>
+        </p>
+        <p>Current sizes:</p>
+        <ul>
+            <li *ngFor="let item1 of productSize">{{ item1 }}</li>
+        </ul>
+        <br>
+        <br>
+        <p>Note: For updation please select available size along with the sizes you want to add as new. Otherwise the sizes will be lost.</p>
+        <br>
+        <div class="list-group-item" *ngFor="let item of allSizes">
+            <input type="checkbox" [name]="item.sizeName" [id]="item.sizeName" [value]="item.sizeName" (change)="onCheck($event)">
+            <label for="{{ item.sizeName }}">{{ item.sizeName }}</label>
+        </div>
+        <br>
+        <br>
+        <label for="productCategory">Product Category:</label>
+        <select name="category" id="" [(ngModel)]="category">
+            <option value="">Select Category</option>
+            <option [value]="item.categoryName" [selected] = "item.categoryName == category" *ngFor="let item of allCategories">{{item.categoryName}}</option>
+        </select>
+        <br>
+        <br>
+        <label for="productStock">Product Stock:</label>
+        <input type="text" name="productStock" [(ngModel)]="productStock">
+        <br>
+        <br>
+        <label for="productDescription">Product Description:</label>
+        <input type="text" name="productDescription" [(ngModel)]="productDescription">
+        <br>
+        <br>
+        <button type="submit" (click)="onProductUpdate(id, productName, productPrice, category, productStock, productDescription)" value="Submit">Submit</button>
+    </form>
+</div>

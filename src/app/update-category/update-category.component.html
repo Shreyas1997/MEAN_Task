@@ -1,0 +1,10 @@
+<div>
+    <h2>Update Category</h2>
+    <form>
+        <label for="categoryName">Category:</label>
+        <input type="text" name="categoryName" [(ngModel)]="categoryName">
+        <br>
+        <br>
+        <button type="submit" (click)="onCategoryUpdate(id, categoryName)" value="Submit">Submit</button>
+    </form>
+</div>

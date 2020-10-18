@@ -1,0 +1,36 @@
+<div>
+    <h2>New Product</h2>
+    <form (submit)="onSubmitNewProduct()">
+        <label for="productName">Product Name:</label>
+        <input type="text" name="productName" [(ngModel)]="productName">
+        <br>
+        <br>
+        <label for="productPrice">Product Price:</label>
+        <input type="text" name="productPrice" [(ngModel)]="productPrice">
+        <br>
+        <br>
+        <label for="productSize">Product Size:</label>
+        <div class="list-group-item" *ngFor="let item of allSizes">
+            <input type="checkbox" [name]="item.sizeName" [id]="item.sizeName" [value]="item.sizeName" (change)="onCheck($event)">
+            <label for="{{ item.sizeName }}">{{ item.sizeName }}</label>
+        </div>
+        <br>
+        <br>
+        <label for="productCategory">Product Category:</label>
+        <select name="category" id="" [(ngModel)]="category">
+            <option value="">Select a Category</option>
+            <option [value]="item.categoryName" *ngFor="let item of allCategories">{{item.categoryName}}</option>
+        </select>
+        <br>
+        <br>
+        <label for="productStock">Product Stock:</label>
+        <input type="text" name="productStock" [(ngModel)]="productStock">
+        <br>
+        <br>
+        <label for="productDescription">Product Description:</label>
+        <input type="text" name="productDescription" [(ngModel)]="productDescription">
+        <br>
+        <br>
+        <button type="submit" value="Submit">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+<div>
+    <button (click)="home()">Home</button>
+    <button (click)="addProduct()">Add new product</button>
+    <button (click)="addSize()">Add new size</button>
+    <button (click)="addCategory()">Add new category</button>
+    <button (click)="signOut()">Sign Out</button>
+</div>
+<div>
+    <h4>{{ userName }}</h4>
+    <p>{{ userEmail }}</p>
+</div>
+<router-outlet></router-outlet>

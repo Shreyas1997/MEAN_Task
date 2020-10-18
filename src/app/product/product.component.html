@@ -1,0 +1,56 @@
+<h1>Product</h1>
+<div>
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Size
+                </th>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Stock
+                </th>
+                <th>
+                    Product Description
+                </th>
+                <th colspan="2">
+                    Action
+                </th>
+            </tr>
+            <tr *ngFor="let items of allProducts">
+                <td>
+                    {{items.productName}}
+                </td>
+                <td>
+                    {{items.productPrice}}
+                </td>
+                <td>
+                    {{items.productSize}}
+                </td>
+                <td>
+                    {{items.category}}
+                </td>
+                <td>
+                    {{items.productStock}}
+                </td>
+                <td>
+                    {{items.productDescription}}
+                </td>
+                <td>
+                    <button (click)="updateProduct(items._id, items.productName, items.productPrice, items.productSize, items.category, items.productStock, items.productDescription)">Update</button>
+                </td>
+                <td>
+                    <button (click)="deleteProduct(items._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

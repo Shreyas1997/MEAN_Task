@@ -1,0 +1,35 @@
+<h1>Size Settings</h1>
+<form (submit)="onSubmitNewSize()">
+    <label for="sizeName">Size Unit:</label>
+    <input type="text" name="sizeName" [(ngModel)]="sizeName">
+    <br>
+    <br>
+    <button type="submit" value="Submit">Add new size</button>
+</form>
+<br>
+<br>
+<div>
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>
+                    Size
+                </th>
+                <th colspan="2">
+                    Action
+                </th>
+            </tr>
+            <tr *ngFor="let items of allSizes">
+                <td>
+                    {{items.sizeName}}
+                </td>
+                <td>
+                    <button (click)="updateSize(items._id, items.sizeName)">Update</button>
+                </td>
+                <td>
+                    <button (click)="deleteSize(items._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

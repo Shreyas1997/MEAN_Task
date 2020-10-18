@@ -1,0 +1,10 @@
+<div>
+    <h2>Update Size</h2>
+    <form>
+        <label for="sizeName">Size Unit:</label>
+        <input type="text" name="sizeName" [(ngModel)]="sizeName">
+        <br>
+        <br>
+        <button type="submit" (click)="onSizeUpdate(id, sizeName)" value="Submit">Submit</button>
+    </form>
+</div>

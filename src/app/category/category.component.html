@@ -1,0 +1,35 @@
+<h1>Category Settings</h1>
+<form (submit)="onSubmitNewCategory()">
+    <label for="categoryName">Category Name:</label>
+    <input type="text" name="categoryName" [(ngModel)]="categoryName">
+    <br>
+    <br>
+    <button type="submit" value="Submit">Add new category</button>
+</form>
+<br>
+<br>
+<div>
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>
+                    Category
+                </th>
+                <th colspan="2">
+                    Action
+                </th>
+            </tr>
+            <tr *ngFor="let items of allCategories">
+                <td>
+                    {{items.categoryName}}
+                </td>
+                <td>
+                    <button (click)="updateCategory(items._id, items.categoryName)">Update</button>
+                </td>
+                <td>
+                    <button (click)="deleteCategory(items._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
